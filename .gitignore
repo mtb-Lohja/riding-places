@@ -1,0 +1,6 @@
+node_modules
+.tmp
+
+# Do not ignore dist on purpose, as it is used to deploy to gh-pages.
+# In normal hosting it should be ignored.
+# dist

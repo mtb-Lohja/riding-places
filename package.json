@@ -1,0 +1,23 @@
+{
+  "name": "mtb-lohja-places",
+  "version": "0.1.0",
+  "description": "Web site to display MTB-Lohja places.",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.8.1",
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-clean": "^0.3.0",
+    "gulp-concat": "^2.2.0",
+    "gulp-if": "^1.2.1",
+    "gulp-jshint": "^1.6.3",
+    "gulp-minify-css": "^0.3.5",
+    "gulp-rename": "^1.2.0",
+    "gulp-strip-json-comments": "^0.1.1",
+    "gulp-uglify": "^0.3.1",
+    "jshint-stylish": "^0.2.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {}
+}
