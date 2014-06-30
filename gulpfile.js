@@ -42,7 +42,8 @@ var paths = {
         dest: 'dist',
         src: [
             'app/*.html',
-            'app/robots.txt'
+            'app/robots.txt',
+            'app/CNAME'
         ]
     },
     data: {
