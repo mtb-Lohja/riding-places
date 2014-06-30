@@ -45,7 +45,7 @@
         }
     }
 
-    getJSON('/data/mtb-lohja-locations.geojson.js', function (data) {
+    getJSON('data/mtb-lohja-locations.geojson.js', function (data) {
 
         L.geoJson(data, {
             onEachFeature: onEachFeature
