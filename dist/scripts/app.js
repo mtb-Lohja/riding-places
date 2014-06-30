@@ -6,7 +6,7 @@
         zoom: 12
     });
 
-    L.Icon.Default.imagePath = '/images/';
+    L.Icon.Default.imagePath = 'images/';
 
     L.tileLayer('http://tiles.kartat.kapsi.fi/peruskartta/{z}/{x}/{y}.jpg', {
         attribution: 'Sisältää <a href="http://www.maanmittauslaitos.fi/avoindata_lisenssi_versio1_20120501">Maanmittauslaitoksen Maastotietokannan 06/2012</a> aineistoa'
