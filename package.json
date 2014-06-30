@@ -2,6 +2,10 @@
   "name": "mtb-lohja-places",
   "version": "0.1.0",
   "description": "Web site to display MTB-Lohja places.",
+  "repository": {
+    "type": "git",
+	"url": "https://github.com/teelahti/MTB-Lohja-places.git"
+  },
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.8.1",
