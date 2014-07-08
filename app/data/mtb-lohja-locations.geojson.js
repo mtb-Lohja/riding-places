@@ -137,9 +137,46 @@
                 "coordinates": [24.07661212, 60.21987064]
             },
             "properties": {
-                "title": "Ketjunkatkaisija",
-                "description": "Kerran kun joku teki jotain tapahtui sitä sun tätä. Eli tähän tarinaa."
+                "title": "Ketjunkatkaisijaristeys",
+                "description": "AM-sedällä oli mennyt totaalisesti hermo tässä polkujen risteyskohdassa ja ilmeisen edullinen ja rimpula Bilteman ketjunkatkaisija oli lentänyt kymmeniä metrejä metsään voimasanojen saattelemana. Pojat käyttivät yhden kesän työkalun etsimiseen ja sen löydyttyä, lahjoitettiin se hienoon terraarioon asennattuna AM:lle pikkujouluissa. Vittuiluhan on kuitenkin välittämistä."
+            }
+        },
+
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [24.064393, 60.215518]
+            },
+            "properties": {
+                "title": "G-piste",
+                "description": "Gunnarlan maja = G-piste, G-spot, G-Maja jne. Yhdistysten rakennus, jonka laavulla voi paistaa makkuria tms. Aikoinaan 24H -tapahtuman keskiö. Voi vuokrata."
+            }
+        },
+
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [24.010695, 60.235679]
+            },
+            "properties": {
+                "title": "Lahokallio",
+                "description": "Hienot näkymät Lohjanjärvelle."
+            }
+        },
+
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [23.955118, 60.172426]
+            },
+            "properties": {
+                "title": "Mikun uimala",
+                "description": "Takuuvarma mutalammikko kuivanakin kesänä."
             }
         }
+
     ]
 }
