@@ -178,7 +178,7 @@
             }
         },
 		
-{
+		{
             "type": "Feature",
             "geometry": {
                 "type": "Point",
@@ -188,7 +188,19 @@
                 "title": "Yritysportaat",
                 "description": "Tallmonmäen legendaarisin spotti. The Spot! Kolmen kallioportaan muodostama haastava portaikko. Jotkut ajavat alaspäin. Harvemmat ylös. "
             }
+        },
+		
+		{
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [24.070723, 60.211403]
+            },
+            "properties": {
+                "title": "Rottiskallio",
+                "description": "Fjälle oli ollut lenkillä ja tuttuun tapaan alkanut jutella vastaan tulleelle koiranulkoiluttajalle. Fjällen perus-tikitalkkia = rotweiler pillastui ja nappasi F:n 100 vuotta vanhasta wettex-takista hihan. Rikosilmoituksessa wettex oli muuttunut 600 euron Gore-Tex&reg; -takiksi. Tästäpä nimi, Rottiskallio."
+            }
         }		
-
+		
     ]
 }
