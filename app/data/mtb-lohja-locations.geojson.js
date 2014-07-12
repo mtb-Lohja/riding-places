@@ -173,7 +173,7 @@
                 "coordinates": [23.955118, 60.172426]
             },
             "properties": {
-                "title": "Mikun uimala",
+                "title": "Micon uimala",
                 "description": "Takuuvarma mutalammikko kuivanakin kesänä."
             }
         }
