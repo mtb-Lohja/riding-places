@@ -170,10 +170,22 @@
                 "coordinates": [23.955118, 60.172426]
             },
             "properties": {
-                "title": "Mikun uimala",
+                "title": "Micon uimala",
                 "description": "Takuuvarma mutalammikko kuivanakin kesänä."
             }
-        }
+        },
+		
+{
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [24.088275, 60.221732]
+            },
+            "properties": {
+                "title": "Yritysportaat",
+                "description": "Tallmonmäen legendaarisin spotti. The Spot! Kolmen kallioportaan muodostama haastava portaikko. Jotkut ajavat alaspäin. Harvemmat ylös. "
+            }
+        }		
 
     ]
 }
