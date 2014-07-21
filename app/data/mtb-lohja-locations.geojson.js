@@ -141,7 +141,50 @@
                 "description": "AM-sedällä oli mennyt totaalisesti hermo tässä polkujen risteyskohdassa ja ilmeisen edullinen ja rimpula Bilteman ketjunkatkaisija oli lentänyt kymmeniä metrejä metsään voimasanojen saattelemana. Pojat käyttivät yhden kesän työkalun etsimiseen ja sen löydyttyä, lahjoitettiin se hienoon terraarioon asennattuna AM:lle pikkujouluissa. Vittuiluhan on kuitenkin välittämistä."
             }
         },
-
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [24.070723, 60.211403]
+            },
+            "properties": {
+                "title": "Rottiskallio",
+                "description": "Fjälle oli ollut lenkillä ja tuttuun tapaan alkanut jutella vastaan tulleelle koiranulkoiluttajalle. Fjällen perus-tikitalkkia = rotweiler pillastui ja nappasi F:n 100 vuotta vanhasta wettex-takista hihan. Rikosilmoituksessa wettex oli muuttunut 600 euron Gore-Tex&reg; -takiksi. Tästäpä nimi, Rottiskallio."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [24.088275, 60.221732]
+            },
+            "properties": {
+                "title": "Yritysportaat",
+                "description": "Tallmonmäen legendaarisin spotti. The Spot! Kolmen kallioportaan muodostama haastava portaikko. Jotkut avajat alaspäin. Harvemmat ylös. "
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [24.116829, 60.280505]
+            },
+            "properties": {
+                "title": "Ampukallio",
+                "description": "Joskus niin hieno ajoalue Lempolassa, nyt moton tuhoama hakkuuaukea. Hienoa polkua edelleen. Nimi juontaa juurensa nykyisen moottoritieliittymän alueella sijainneesta ampumaradasta."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [24.114959, 60.278392]
+            },
+            "properties": {
+                "title": "Bunkerhill",
+                "description": "Lempolassa sijaitseva tekninen pikku-spotti, joka tarjoaa hyvää ylämäkeen ajamisharjoitusta."
+            }
+        },
         {
             "type": "Feature",
             "geometry": {
@@ -153,7 +196,6 @@
                 "description": "Gunnarlan maja = G-piste, G-spot, G-Maja jne. Yhdistysten rakennus, jonka laavulla voi paistaa makkuria tms. Aikoinaan 24H -tapahtuman keskiö. Voi vuokrata."
             }
         },
-
         {
             "type": "Feature",
             "geometry": {
@@ -165,7 +207,6 @@
                 "description": "Hienot näkymät Lohjanjärvelle."
             }
         },
-
         {
             "type": "Feature",
             "geometry": {
@@ -173,34 +214,9 @@
                 "coordinates": [23.955118, 60.172426]
             },
             "properties": {
-                "title": "Micon uimala",
-                "description": "Takuuvarma mutalammikko kuivanakin kesänä."
-            }
-        },
-		
-		{
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [24.088275, 60.221732]
-            },
-            "properties": {
-                "title": "Yritysportaat",
-                "description": "Tallmonmäen legendaarisin spotti. The Spot! Kolmen kallioportaan muodostama haastava portaikko. Jotkut ajavat alaspäin. Harvemmat ylös. "
-            }
-        },
-		
-		{
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [24.070723, 60.211403]
-            },
-            "properties": {
-                "title": "Rottiskallio",
-                "description": "Fjälle oli ollut lenkillä ja tuttuun tapaan alkanut jutella vastaan tulleelle koiranulkoiluttajalle. Fjällen perus-tikitalkkia = rotweiler pillastui ja nappasi F:n 100 vuotta vanhasta wettex-takista hihan. Rikosilmoituksessa wettex oli muuttunut 600 euron Gore-Tex&reg; -takiksi. Tästäpä nimi, Rottiskallio."
+                "title": "Mikun uimala",
+                "description": "Takuuvarma mutalammikko kuivanakin kesänä. "
             }
         }		
-		
     ]
 }
