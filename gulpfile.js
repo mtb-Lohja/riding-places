@@ -1,4 +1,7 @@
 // TODO: Add cache buster like gulp-rev
+// TODO: Take gulp-htmlbuild or similar into use https://www.npmjs.org/package/gulp-htmlbuild
+// TODO: Take gulp serve or gulp browsersync into use with two tasks: dist and dev
+// TODO: Use gulp browsersync live reload capabilities
 var gulp = require('gulp'),
     gulpif = require('gulp-if'),
     autoprefixer = require('gulp-autoprefixer'),
