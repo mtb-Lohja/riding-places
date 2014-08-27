@@ -1,6 +1,7 @@
 Show [MTB-Lohja](http://www.mtb-lohja.com/) mountain biking locations on a map. Uses [Leaflet.js](http://leafletjs.com/) and [GeoJSON](http://geojson.org/) to show locations. Further instructions and readme in Finnish, as the primary audience of this service is Finnish. 
 
 ---------------------- 
+[![Code Climate](https://codeclimate.com/github/teelahti/MTB-Lohja-places/badges/gpa.svg)](https://codeclimate.com/github/teelahti/MTB-Lohja-places)
 
 # MTB-Lohjan:n ajomaastot kartalla #
 
