@@ -59,6 +59,7 @@ var paths = {
     }
 };
 
+// Task functions
 function styles() {
     return gulp.src(paths.styles.src)
       .pipe(gulpif(/\/app\/styles\*.css$/, autoprefixer('last 2 version')))
