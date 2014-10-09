@@ -261,10 +261,20 @@
             },
             "properties": {
                 "title": "Kloppidroppi",
-                "description": "Kallioporras, jossa on useampi heittänyt pyörän katolleen."
+                "description": "Kallioporras, jossa useampi henkilö on heittänyt pyörän katolleen."
             }
         },
-
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [24.08873056, 60.22563056]
+            },
+            "properties": {
+                "title": "Kuminkorjauskanjoni",
+                "description": "MRO:lla petti tubeless ja etukiekkoon piti laittaa sisuri. Korjauksen valmistumista odotellessa bongattiin Mikan ja Tomi H:n kanssa polun vierestä spotti. Ensimmäisenä laskeudutaan kuumottava porras, jota seuraa jyrkkä kalliolasku notkon pohjalle. Vastarinne nousee kallion ja puun välistä, tämä menee samalla vauhdilla ylös miltei polkematta jos ajolinja on oikea. Puun jälkeen nousu loivenee ja seuraa \"vaikein\" kohta eli kaatuneen puun ylitys, loppu onkin peruskauraa takaisin polulle. Moni on tätä katsellut, vain harvat ajaneet."
+            }
+        },
 
         {
             "type": "Feature",
