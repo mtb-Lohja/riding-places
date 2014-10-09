@@ -1,6 +1,5 @@
-(function () {
+(function() {
     'use strict';
-
     var map = L.map('map', {
         center: [60.22987064, 24.07661212],
         zoom: 12
@@ -16,7 +15,7 @@
         var xhr = typeof XMLHttpRequest !== 'undefined' ?
             new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         xhr.open('get', url, true);
-        xhr.onreadystatechange = function () {
+        xhr.onreadystatechange = function() {
             var status;
             var data;
             // http://xhr.spec.whatwg.org/#dom-xmlhttprequest-readystate
@@ -44,13 +43,13 @@
         }
     }
 
-    getJSON('data/mtb-lohja-locations.geojson.js', function (data) {
+    getJSON('data/mtb-lohja-locations.geojson.js', function(data) {
 
         L.geoJson(data, {
             onEachFeature: onEachFeature
         }).addTo(map);
 
-    }, function (status) {
+    }, function(status) {
         // TODO: Show error on UI
         console.error('Datan haku epäonnistui.', status);
     });

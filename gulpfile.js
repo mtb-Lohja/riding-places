@@ -1,3 +1,5 @@
+'use strict';
+
 // TODO: Add cache buster like gulp-rev
 // TODO: Take gulp-htmlbuild or similar into use https://www.npmjs.org/package/gulp-htmlbuild
 // TODO: Take gulp serve or gulp browsersync into use with two tasks: dist and dev
@@ -125,7 +127,7 @@ gulp.task('watch', function () {
 });
 
 // The default task, called when you run `gulp` from cli.
-// First clean and start watching for file changes, and 
+// First clean and start watching for file changes, and
 // then build everything once for starters.
 gulp.task('default', ['clean', 'watch'], function () {
     styles();
