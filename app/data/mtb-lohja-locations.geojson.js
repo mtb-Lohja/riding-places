@@ -2,8 +2,6 @@
     "type": "FeatureCollection",
     "features": [
 
-        // Alueet
-
         {
             "type": "Feature",
             "geometry": {
@@ -107,7 +105,6 @@
         },
 
 
-        // Polut
 
         {
             "type": "Feature",
@@ -146,7 +143,6 @@
         },
 
 
-        // Paikat (pisteet)
 
         {
             "type": "Feature",

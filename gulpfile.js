@@ -1,7 +1,6 @@
 'use strict';
 
 // TODO: Add cache buster like gulp-rev
-// TODO: Take gulp-htmlbuild or similar into use https://www.npmjs.org/package/gulp-htmlbuild
 // TODO: Take gulp serve or gulp browsersync into use with two tasks: dist and dev
 // TODO: Use gulp browsersync live reload capabilities
 var gulp = require('gulp'),
@@ -12,8 +11,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
-    del = require('del'),
-    stripJsonComments = require('gulp-strip-json-comments');
+    htmlreplace = require('gulp-html-replace'),
+    del = require('del');
 
 var paths = {
     scripts: {
@@ -97,13 +96,20 @@ function images() {
 }
 
 function html() {
+    // TODO: Magic strings, use common consts
     return gulp.src(paths.html.src)
+     .pipe(htmlreplace(
+         {
+             'css': 'styles/app.min.css',
+             'libs': 'lib/libs.min.js',
+             'js': 'scripts/app.min.js' 
+         }
+     ))
 	 .pipe(gulp.dest(paths.html.dest));
 }
 
 function data() {
     return gulp.src(paths.data.src)
-        .pipe(stripJsonComments())
         .pipe(gulp.dest(paths.data.dest));
 }
 
