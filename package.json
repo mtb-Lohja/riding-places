@@ -4,7 +4,11 @@
   "description": "Web site to display MTB-Lohja places.",
   "repository": {
     "type": "git",
-	"url": "https://github.com/teelahti/MTB-Lohja-places.git"
+    "url": "https://github.com/teelahti/MTB-Lohja-places.git"
+  },
+  "scripts": {
+    "//": "See https://gist.github.com/cobyism/4730490",
+    "publish": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {},
   "devDependencies": {
@@ -18,10 +22,10 @@
     "gulp-rename": "^1.2.0",
     "gulp-strip-json-comments": "^0.1.1",
     "gulp-uglify": "^0.3.1",
+    "http-server": "^0.8.0",
     "jshint-stylish": "^0.2.0"
   },
   "engines": {
     "node": ">=0.10.0"
-  },
-  "scripts": {}
+  }
 }
