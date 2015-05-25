@@ -8,7 +8,7 @@
   },
   "scripts": {
     "//": "See https://gist.github.com/cobyism/4730490",
-    "publish": "git subtree push --prefix dist origin gh-pages",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
     "dev": "http-server dist -o"
   },
   "dependencies": {},
