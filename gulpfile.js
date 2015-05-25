@@ -1,8 +1,7 @@
 'use strict';
 
 // TODO: Add cache buster like gulp-rev
-// TODO: Take gulp serve or gulp browsersync into use with two tasks: dist and dev
-// TODO: Use gulp browsersync live reload capabilities
+// TODO: Take gulp-webserver into use with two tasks: dist and dev. Remove corresponding npm run tasks.
 var gulp = require('gulp'),
     gulpif = require('gulp-if'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -60,6 +59,7 @@ var paths = {
 
 // Task functions
 function styles() {
+    // TODO: Using gulp-merge might be more appropriate than gulp-if
     return gulp.src(paths.styles.src)
       .pipe(gulpif(/\/app\/styles\*.css$/, autoprefixer('last 2 version')))
 
