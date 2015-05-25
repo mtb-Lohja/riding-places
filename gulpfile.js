@@ -11,8 +11,8 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    clean = require('gulp-clean'),
     concat = require('gulp-concat'),
+    del = require('del'),
     stripJsonComments = require('gulp-strip-json-comments');
 
 var paths = {
@@ -108,9 +108,8 @@ function data() {
 }
 
 // Register tasks
-gulp.task('clean', function () {
-    return gulp.src([paths.html.dest], { read: false })
-      .pipe(clean());
+gulp.task('clean', function (cb) {
+  del([paths.html.dest + '**/*'], cb);
 });
 gulp.task('styles', styles);
 gulp.task('scripts', scripts);
