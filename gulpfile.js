@@ -1,7 +1,6 @@
 'use strict';
 
 // TODO: Add cache buster like gulp-rev
-// TODO: Take gulp-webserver into use with two tasks: dist and dev. Remove corresponding npm run tasks.
 var gulp = require('gulp'),
     gulpif = require('gulp-if'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -11,7 +10,8 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     htmlreplace = require('gulp-html-replace'),
-    del = require('del');
+    del = require('del'),
+    webserver = require('gulp-webserver');
 
 var paths = {
     scripts: {
@@ -113,6 +113,15 @@ function data() {
         .pipe(gulp.dest(paths.data.dest));
 }
 
+function build() {
+    styles();
+    scripts();
+    libs();
+    images();
+    html();
+    data();
+}
+
 // Register tasks
 gulp.task('clean', function (cb) {
   del([paths.html.dest + '**/*'], cb);
@@ -132,14 +141,22 @@ gulp.task('watch', function () {
     gulp.watch(paths.data.src, ['data']);
 });
 
+gulp.task('build', ['clean'], build);
+
 // The default task, called when you run `gulp` from cli.
-// First clean and start watching for file changes, and
-// then build everything once for starters.
-gulp.task('default', ['clean', 'watch'], function () {
-    styles();
-    scripts();
-    libs();
-    images();
-    html();
-    data();
+// First clean and build once. Then start watching for file changes.
+// After all that open development web server.
+gulp.task('default', ['build', 'watch'], function() {
+    // TODO: Fix livereload
+    return gulp.src('app').pipe(webserver({
+        livereload: true,
+        fallback: 'index.html',
+        directoryListing: false,
+        open: true
+    }));
+});
+
+// Emulate production setup
+gulp.task('webserver:dist', ['build'], function() {
+  return gulp.src('dist').pipe(webserver({ open: true, port: 8001 }));
 });
