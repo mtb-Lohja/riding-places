@@ -1,162 +1,158 @@
-'use strict';
+"use strict";
 
 // TODO: Add cache buster like gulp-rev
-var gulp = require('gulp'),
-    gulpif = require('gulp-if'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
-    htmlreplace = require('gulp-html-replace'),
-    del = require('del'),
-    webserver = require('gulp-webserver');
+const gulp = require("gulp"),
+    { series, parallel } = require("gulp"),
+    gulpif = require("gulp-if"),
+    autoprefixer = require("gulp-autoprefixer"),
+    minifycss = require("gulp-minify-css"),
+    jshint = require("gulp-jshint"),
+    uglify = require("gulp-uglifyes"),
+    rename = require("gulp-rename"),
+    concat = require("gulp-concat"),
+    htmlreplace = require("gulp-html-replace"),
+    del = require("del"),
+    webserver = require("gulp-webserver");
 
-var paths = {
+const paths = {
     scripts: {
-        dest: 'dist/scripts',
-        src: [
-            'app/scripts/*.js'
-        ]
+        dest: "dist/scripts",
+        src: ["app/scripts/*.js"]
     },
     libs: {
-        dest: 'dist/lib',
-        src: [
-            'app/lib/leaflet/dist/leaflet.js'
-        ]
+        dest: "dist/lib",
+        src: ["app/lib/leaflet/leaflet.js"]
     },
     styles: {
-        dest: 'dist/styles',
-        src: [
-            'app/styles/main.css',
-            'app/lib/leaflet/dist/leaflet.css'
-        ]
+        dest: "dist/styles",
+        src: ["app/styles/main.css", "app/lib/leaflet/leaflet.css"]
     },
     images: {
-        dest: 'dist/images',
-        src:
-        [
-            'app/images/*',
-            'app/lib/leaflet/dist/images/*'
-        ]
+        dest: "dist/styles/images",
+        src: ["app/images/*", "app/lib/leaflet/images/*"]
     },
     html: {
-        dest: 'dist',
-        src: [
-            'app/*.html',
-            'app/robots.txt',
-            'app/CNAME'
-        ]
+        dest: "dist",
+        src: ["app/*.html", "app/robots.txt", "app/CNAME"]
     },
     data: {
-        dest: 'dist/data',
-        src: [
-            'app/data/*.js'
-        ]
+        dest: "dist/data",
+        src: ["app/data/*.js"]
     }
 };
 
 // Task functions
 function styles() {
-    // TODO: Using gulp-merge might be more appropriate than gulp-if
-    return gulp.src(paths.styles.src)
-      .pipe(gulpif(/\/app\/styles\*.css$/, autoprefixer('last 2 version')))
-
-       // Adding to pipe should work like this, but currently fails due to https://github.com/wearefractal/vinyl-fs/issues/25
-       // .pipe(gulp.src(paths.styles.srcLibs))
-      .pipe(concat('app.css'))
-      .pipe(gulp.dest(paths.styles.dest))
-      .pipe(rename({ suffix: '.min' }))
-      .pipe(minifycss())
-      .pipe(gulp.dest(paths.styles.dest));
+    return gulp
+        .src(paths.styles.src)
+        .pipe(gulpif(/\/app\/styles\*.css$/, autoprefixer("last 2 version")))
+        .pipe(concat("app.css"))
+        .pipe(gulp.dest(paths.styles.dest))
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(minifycss())
+        .pipe(gulp.dest(paths.styles.dest));
 }
 
 function scripts() {
-    return gulp.src(paths.scripts.src)
-     .pipe(jshint('.jshintrc'))
-     .pipe(jshint.reporter('jshint-stylish'))
-     .pipe(concat('app.js'))
-     .pipe(gulp.dest(paths.scripts.dest))
-     .pipe(rename({ suffix: '.min' }))
-     .pipe(uglify())
-     .pipe(gulp.dest(paths.scripts.dest));
+    return gulp
+        .src(paths.scripts.src)
+        .pipe(jshint(".jshintrc"))
+        .pipe(jshint.reporter("jshint-stylish"))
+        .pipe(concat("app.js"))
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(uglify())
+        .pipe(gulp.dest(paths.scripts.dest));
+}
+
+function copyLibsFromNodeModules() {
+    return gulp
+        .src("node_modules/leaflet/dist/**/*")
+        .pipe(gulp.dest("app/lib/leaflet/"));
 }
 
 function libs() {
-    return gulp.src(paths.libs.src)
-     .pipe(concat('libs.min.js'))
-     .pipe(gulp.dest(paths.libs.dest));
+    return gulp
+        .src(paths.libs.src)
+        .pipe(concat("libs.min.js"))
+        .pipe(gulp.dest(paths.libs.dest));
 }
 
 function images() {
-    // Copy all static images
-    return gulp.src(paths.images.src)
-     .pipe(gulp.dest(paths.images.dest));
+    return gulp.src(paths.images.src).pipe(gulp.dest(paths.images.dest));
 }
 
 function html() {
-    // TODO: Magic strings, use common consts
-    return gulp.src(paths.html.src)
-     .pipe(htmlreplace(
-         {
-             'css': 'styles/app.min.css',
-             'libs': 'lib/libs.min.js',
-             'js': 'scripts/app.min.js' 
-         }
-     ))
-	 .pipe(gulp.dest(paths.html.dest));
+    return gulp
+        .src(paths.html.src)
+        .pipe(
+            htmlreplace({
+                css: "styles/app.min.css",
+                libs: "lib/libs.min.js",
+                js: "scripts/app.min.js"
+            })
+        )
+        .pipe(gulp.dest(paths.html.dest));
 }
 
 function data() {
-    return gulp.src(paths.data.src)
-        .pipe(gulp.dest(paths.data.dest));
+    return gulp.src(paths.data.src).pipe(gulp.dest(paths.data.dest));
 }
 
-function build() {
-    styles();
-    scripts();
-    libs();
-    images();
-    html();
-    data();
+function clean(cb) {
+    del([paths.html.dest + "**/*"], cb);
+}
+
+function watch() {
+    gulp.watch(paths.styles.src, series(styles));
+    gulp.watch(paths.scripts.src, series(scripts));
+    gulp.watch(paths.html.src, series(html));
+    gulp.watch(paths.data.src, series(data));
 }
 
 // Register tasks
-gulp.task('clean', function (cb) {
-  del([paths.html.dest + '**/*'], cb);
-});
-gulp.task('styles', styles);
-gulp.task('scripts', scripts);
-gulp.task('libs', libs);
-gulp.task('images', images);
-gulp.task('html', html);
-gulp.task('data', data);
+exports.clean = clean;
+exports.libs = series(copyLibsFromNodeModules, libs);
 
 // Rerun tasks when files change
-gulp.task('watch', function () {
-    gulp.watch(paths.styles.src, ['styles']);
-    gulp.watch(paths.scripts.src, ['scripts']);
-    gulp.watch(paths.html.src, ['html']);
-    gulp.watch(paths.data.src, ['data']);
-});
+exports.watch = watch;
 
-gulp.task('build', ['clean'], build);
+exports.build = series(
+    clean,
+    series(
+        copyLibsFromNodeModules,
+        parallel(styles, scripts, libs, images, html, data)
+    )
+);
 
 // The default task, called when you run `gulp` from cli.
 // First clean and build once. Then start watching for file changes.
 // After all that open development web server.
-gulp.task('default', ['build', 'watch'], function() {
-    // TODO: Fix livereload
-    return gulp.src('app').pipe(webserver({
-        livereload: true,
-        fallback: 'index.html',
-        directoryListing: false,
-        open: true
-    }));
-});
+exports.default = series(
+    series(
+        copyLibsFromNodeModules,
+        parallel(styles, scripts, libs, images, html, data)
+    ),
+    parallel(watch, function() {
+        // TODO: Fix livereload
+        return gulp.src("app").pipe(
+            webserver({
+                livereload: true,
+                fallback: "index.html",
+                directoryListing: false,
+                open: true
+            })
+        );
+    })
+);
 
 // Emulate production setup
-gulp.task('webserver:dist', ['build'], function() {
-  return gulp.src('dist').pipe(webserver({ open: true, port: 8001 }));
-});
+exports["webserver:dist"] = series(
+    series(
+        copyLibsFromNodeModules,
+        parallel(styles, scripts, libs, images, html, data)
+    ),
+    function() {
+        return gulp.src("dist").pipe(webserver({ open: true, port: 8001 }));
+    }
+);

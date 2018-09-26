@@ -13,4 +13,8 @@ Kohteita on kolmenlaisia: alueita, polkuja, ja pisteitä. Nämä kaikki kolme va
 
 > Kypäränhalkaisija (jokutoinennimi, jokukolmasnimi)
 
-Paikkatiedot sijaitsevat hakemistossa /app/data, ja niitä voi muokata suoraan tekemällä pull requestin, tai pyytämällä muutosta MTB-Lohjan foorumeilla. 
+Paikkatiedot sijaitsevat hakemistossa /app/data, ja niitä voi muokata suoraan tekemällä pull requestin, tai pyytämällä muutosta MTB-Lohjan foorumeilla.
+
+## Kehittäminen ##
+
+Aja `npm install` ja sen jälkeen `gulp` niin saat kehityspalvelimen auki.
