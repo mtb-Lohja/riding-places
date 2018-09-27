@@ -1,3 +1,5 @@
+RETIRED! Map has been moved to https://github.com/mtb-Lohja/web 
+
 Show [MTB-Lohja](http://www.mtb-lohja.com/) mountain biking locations on a map. Uses [Leaflet.js](http://leafletjs.com/) and [GeoJSON](http://geojson.org/) to show locations. Further instructions and readme in Finnish, as the primary audience of this service is Finnish. 
 
 ---------------------- 
